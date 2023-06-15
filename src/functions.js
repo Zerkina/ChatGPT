@@ -1,10 +1,10 @@
 function CheckData(phoneNumber){
-    var url = "https://alif.unistar.ru/api/get_characteristics";
+    var url = "https://10.131.0.14:2020/api/get_answer";
            
     var options = {
-                    dataType: "json",
+                    dataType: 'json',
                     headers: {
-                            "Content-Type": "application/x-www-form-urlencoded"
+                            'Content-Type': 'application/json \ -d { "id": "string" }'
                             },
                     form: {
                             phone: phoneNumber
