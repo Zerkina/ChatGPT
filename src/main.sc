@@ -22,7 +22,8 @@ theme: /
         script:
             $session.answer = '';
             while ($session.answer === '') {
-                $session.answer = Chat_Get_answer($session.id); //то что нам пришло, вернулось
+                   var response = Chat_Get_answer($session.id);
+                   $session.answer = response.data["text"];           //то что нам пришло, вернулось
             }
         a: {{$session.answer}}
         
