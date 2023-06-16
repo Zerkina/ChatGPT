@@ -8,17 +8,17 @@ theme: /
         a: Начнём.
         go: /Send_text
         
-
-    state: Sent_text
-        q!: *
-        script:
-            log($parseTree);
-            $session.text = $parseTree._Root; //положили то что сказал пользователь
-            $session.id = Chat_Send_text($session.text); //отправляем в фцункию
-        go!: /Get_answer
+        state: Sent_text
+            q!: *
+            script:
+                log($parseTree);
+                $session.text = $parseTree._Root; //положили то что сказал пользователь
+                $session.id = Chat_Send_text($session.text); //отправляем в фцункию
+            go: /Get_answer
         
 #_Root вместо value
     state: Get_answer
+        q!: получаем
         script:
             $session.answer = '';
             while ($session.answer === '') {
