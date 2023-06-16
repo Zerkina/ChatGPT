@@ -12,9 +12,9 @@ function Chat_Send_text(text){
                     };
                                     	
     var response = $http.post(url, options);
-    $reactions.answer(response);
+    $reactions.answer(response.data["id"]);
     if(response.isOk) {
-        return response.data
+        return response.data["id"]
     } else {
         return "NotFound"
     };
