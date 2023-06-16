@@ -1,4 +1,4 @@
-function Chat(){
+function Chat_Send_text(text){
     var url = "https://10.131.0.14:2020/api/send_text";
            
     var options = {
@@ -7,7 +7,7 @@ function Chat(){
                             "Content-Type": "application/json"
                             },
                     body: {
-                            "text": "Специальность врача: терапевт. Время приема: Пн 15:00, Вт 14:00, Ср 09:00, Чт 16:40,
+                            "text": text
                         }
                     };
                                     	
@@ -19,3 +19,27 @@ function Chat(){
         return "NotFound"
     };
 }
+
+function Chat_Get_answer(id){
+    var url = "https://10.131.0.14:2020/api/get_answer";
+           
+    var options = {
+                    dataType: "json",
+                    headers: {
+                            "Content-Type": "application/json"
+                            },
+                    body: {
+                            "id": id
+                        }
+                    };
+                                    	
+    var response = $http.get(url, options);
+    
+    if(response.isOk) {
+        return response.data
+    } else {
+        return "NotFound"
+    };
+}
+//После запроса должен прийти id запроса, мы его сохраняем в перменную
+//пишем такую же функцию но только с get и меняем ссылку и  параметры, в body не тект, а id
