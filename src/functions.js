@@ -1,5 +1,5 @@
 function Chat_Send_text(text){
-    var url = "https://10.131.0.14:2020/api/send_text";
+    var url = "https://gpt.unistar.ru/api/send_text";
            
     var options = {
                     dataType: "json",
@@ -21,7 +21,7 @@ function Chat_Send_text(text){
 }
 
 function Chat_Get_answer(id){
-    var url = "https://10.131.0.14:2020/api/get_answer";
+    var url = "https://gpt.unistar.ru/api/get_answer";
            
     var options = {
                     dataType: "json",
