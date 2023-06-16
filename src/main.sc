@@ -25,12 +25,12 @@ theme: /
         state: Right
             q: огурец
             a: Ну конечно, это огурец! Молодец! А вот и твой ответ на твой вопрос.
-            go!: Get_answer
+            go!: /Get_answer
         
         state: Wrong
             q: не знаю
             a: Это огурец! Ладно, вот твой ответ на твой вопрос.
-            go!: Get_answer
+            go!: /Get_answer
 
  
     state: Get_answer
