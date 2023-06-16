@@ -12,7 +12,7 @@ function Chat_Send_text(text){
                     };
                                     	
     var response = $http.post(url, options);
-    $reactions.answer(response.data["id"]);
+    //$reactions.answer(response.data["id"]);
     if(response.isOk) {
         return response.data["id"]
     } else {
@@ -34,7 +34,7 @@ function Chat_Get_answer(id){
                     };
                                     	
     var response = $http.get(url, options);
-    $reactions.answer(response.data["text"]);
+    //$reactions.answer(response.data["text"]);
     if(response.isOk) {
         return response.data["text"]
     } else {
