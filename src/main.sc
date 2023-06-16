@@ -13,11 +13,11 @@ theme: /
         q!: *
         script:
             log($parseTree);
-            $session.text = $parseTree._value; //положили то что сказал пользователь
+            $session.text = $parseTree._Root; //положили то что сказал пользователь
             $session.id = Chat_Send_text($session.text); //отправляем в фцункию
         go!: /Get_answer
         
-
+#_Root вместо value
     state: Get_answer
         script:
             $session.answer = '';
