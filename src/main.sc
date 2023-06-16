@@ -22,11 +22,10 @@ theme: /
         script:
             $session.answer = '';
             while ($session.answer === '') {
-                   var response = Chat_Get_answer($session.id);
-                   $session.answer = response.data["text"];           //то что нам пришло, вернулось
+                   $session.answer = Chat_Get_answer($session.id);
             }
         a: {{$session.answer}}
-        
+        #то что нам пришло, вернулось
     #Там 2 метода, один для того что бы отправить текст и получить id,
     #второй что бы запросить сам сгенерированный текст. 
     #Текст генерируется какое то время поэтому запросы не надо слать подряд. 
