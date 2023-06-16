@@ -6,7 +6,7 @@ function Chat_Send_text(text){
                     headers: {
                             "Content-Type": "application/json"
                             },
-                    body: {
+                    form: {
                             "text": text
                         }
                     };
@@ -28,7 +28,7 @@ function Chat_Get_answer(id){
                     headers: {
                             "Content-Type": "application/json"
                             },
-                    body: {
+                    form: {
                             "id": id
                         }
                     };
