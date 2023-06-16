@@ -15,10 +15,24 @@ theme: /
                 $session.text = $parseTree._Root; //положили то что сказал пользователь
                 $session.id = Chat_Send_text($session.text); //отправляем в фцункию
             #go: /Get_answer
-                $reactions.transition( {value: "/Get_answer", deferred: false} );
+            go!: /Have_fun   
         
 #_Root вместо value
 #Поставь паузу между запросами 10-15 секунд. Придумать загшучку чтобы быстро не переходил в GEt_answer
+    state: Have_fun
+        a: Пока ждем ответа. Я тебя буду развлекать. Разгадай загадку: "Без окон, без дверей, полна горница людей." Что это?
+        
+        state: Right
+            q: огурец
+            a: Ну конечно, это огурец! Молодец! А вот и твой ответ на твой вопрос.
+            go!: Get_answer
+        
+        state: Wrong
+            q: не знаю
+            a: Это огурец! Ладно, вот твой ответ на твой вопрос.
+            go!: Get_answer
+
+ 
     state: Get_answer
         #q!: получаем
         script:
