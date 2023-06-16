@@ -14,12 +14,12 @@ theme: /
                 log($parseTree);
                 $session.text = $parseTree._Root; //положили то что сказал пользователь
                 $session.id = Chat_Send_text($session.text); //отправляем в фцункию
-            go!: /Get_answer
+            go: /Get_answer
         
 #_Root вместо value
-#Поставь паузу между запросами 10-15 секунд.
+#Поставь паузу между запросами 10-15 секунд. Придумать загшучку чтобы быстро не переходил в GEt_answer
     state: Get_answer
-        #q!: получаем
+        q!: получаем
         script:
             $session.answer = '';
             while ($session.answer === '') {
