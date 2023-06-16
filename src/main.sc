@@ -8,7 +8,7 @@ theme: /
         a: Начнём.
         go: /Send_text
         
-        state: Sent_text
+        state: Send_text
             q!: *
             script:
                 log($parseTree);
