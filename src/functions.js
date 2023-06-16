@@ -12,7 +12,7 @@ function Chat_Send_text(text){
                     };
                                     	
     var response = $http.post(url, options);
-    
+    $reactions.answer(response);
     if(response.isOk) {
         return response.data
     } else {
