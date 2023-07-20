@@ -1,5 +1,6 @@
-function Chat_Send_text(text){
-    var url = "https://gpt.unistar.ru/api/send_text";
+// МОЯ ВЕРСИЯ СЦЕНАРИЯ
+function Login_to_ChatGPT(){
+    var url = "https://gpt.unistar.ru/api/login";
            
     var options = {
                     dataType: "json",
@@ -7,18 +8,21 @@ function Chat_Send_text(text){
                             "Content-Type": "application/json"
                             },
                     body: {
-                            "text": text
+                            "login": "unistaradmin"
+                            "password": "X~z%$uyAhXW53rmi9uouitMoy"
                         }
                     };
-                                    	
+                      {
+}              	
     var response = $http.post(url, options);
     //$reactions.answer(response.data["id"]);
     if(response.isOk) {
-        return response.data["id"]
+        return response.data["token"]
     } else {
-        return "NotFound"
+        return "Authorization failed"
     };
 }
+
 
 function Chat_Get_answer(id){
     var url = "https://gpt.unistar.ru/api/get_answer";
